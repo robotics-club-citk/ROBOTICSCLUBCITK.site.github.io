@@ -5,9 +5,9 @@ title: Shamim shahinur rahman
 email: U21ce3082@cit.ac.in
 phone: 9706553977
 avatar: shamim.jpeg
-role: convenor
+role: CHIEF CONVENOR
 type: convenor
-roll: 202102031038
+roll: 202102013082
 branch: CE
 education: B.Tech
 priority: 1
