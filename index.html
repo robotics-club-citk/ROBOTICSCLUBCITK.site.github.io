@@ -28,33 +28,6 @@ Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to 
 </div>
 <hr>
 <!-- Image Gallery Section -->
-<div class="section">
-  <div class="container">
-    <h2 class="gallery-title">Image Gallery</h2>
-    <div class="slider">
-      <div class="slider-wrapper">
-        <div class="slider-images">
-          <div class="slider-item">
-            <img src="{{ site.baseurl }}/assets/img/gallery/1535136969180x3820.jpg" alt="Image 1">
-            <div class="caption">Robotics Workshop</div>
-          </div>
-          <div class="slider-item">
-            <img src="{{ site.baseurl }}/assets/img/gallery/1535138256706x5469.jpg" alt="Image 2">
-            <div class="caption">Project Presentation</div>
-          </div>
-          <div class="slider-item">
-            <img src="{{ site.baseurl }}/assets/img/gallery/DSC03607.jpg" alt="Image 3">
-            <div class="caption">Team Collaboration</div>
-          </div>
-        </div>
-      </div>
-      <!-- Slider Controls -->
-      <button class="slider-control prev">&lt;</button>
-      <button class="slider-control next">&gt;</button>
-    </div>
-  </div>
-</div>
-
 <style>
   .gallery-title {
     text-align: center;
@@ -66,7 +39,8 @@ Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to 
 
   .slider {
     position: relative;
-    max-width: 800px;
+    width: 100%; /* Expanded to full width */
+    max-width: 1200px; /* Increased max-width */
     margin: 20px auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -91,21 +65,26 @@ Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to 
 
   .slider-item img {
     width: 100%;
-    height: 400px;
+    height: 500px; /* Increased height */
     object-fit: cover;
     border-radius: 10px;
   }
 
-  .caption {
+.caption {
     position: absolute;
-    bottom: 10%;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 3rem;
-  }
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
+    font-size: 1.25rem; /* Slightly larger font for readability */
+    font-weight: 500; /* Medium weight for a professional look */
+    letter-spacing: 0.5px; /* Slight letter spacing for better readability */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
 
   .slider-control {
     position: absolute;
@@ -118,6 +97,9 @@ Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to 
     cursor: pointer;
     font-size: 1.5rem;
     z-index: 100;
+    border-radius: 50%; /* Added border radius */
+    width: 50px; /* Set width */
+    height: 50px; /* Set height */
   }
 
   .slider-control.prev {
@@ -131,7 +113,54 @@ Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to 
   .slider-control:hover {
     background-color: rgba(0, 0, 0, 0.7);
   }
+
+  .slider-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+
+  .indicator {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .indicator.active {
+    background-color: rgba(255, 255, 255, 1);
+  }
 </style>
+
+<div class="slider">
+  <div class="slider-wrapper">
+    <div class="slider-images">
+      <div class="slider-item">
+        <img src="{{ site.baseurl }}/assets/img/gallery/1535136969180x3820.jpg" alt="Image 1">
+        <div class="caption">Robotics Workshop</div>
+      </div>
+      <div class="slider-item">
+        <img src="{{ site.baseurl }}/assets/img/gallery/1535138256706x5469.jpg" alt="Image 2">
+        <div class="caption">Project Presentation</div>
+      </div>
+      <div class="slider-item">
+        <img src="{{ site.baseurl }}/assets/img/gallery/DSC03607.jpg" alt="Image 3">
+        <div class="caption">Team Collaboration</div>
+      </div>
+    </div>
+  </div>
+  <button class="slider-control prev">&lt;</button>
+  <button class="slider-control next">&gt;</button>
+  <div class="slider-indicators">
+    <div class="indicator active" data-index="0"></div>
+    <div class="indicator" data-index="1"></div>
+    <div class="indicator" data-index="2"></div>
+  </div>
+</div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
@@ -139,6 +168,7 @@ Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to 
     const items = document.querySelectorAll('.slider-item');
     const prevButton = document.querySelector('.slider-control.prev');
     const nextButton = document.querySelector('.slider-control.next');
+    const indicators = document.querySelectorAll('.indicator');
     let currentIndex = 0;
 
     function showSlide(index) {
@@ -151,6 +181,13 @@ Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to 
       }
       const offset = -currentIndex * 100;
       sliderImages.style.transform = `translateX(${offset}%)`;
+      updateIndicators();
+    }
+
+    function updateIndicators() {
+      indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === currentIndex);
+      });
     }
 
     function nextSlide() {
@@ -161,6 +198,12 @@ Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to 
       showSlide(currentIndex - 1);
     }
 
+    indicators.forEach(indicator => {
+      indicator.addEventListener('click', () => {
+        showSlide(parseInt(indicator.getAttribute('data-index')));
+      });
+    });
+
     nextButton.addEventListener('click', nextSlide);
     prevButton.addEventListener('click', prevSlide);
 
@@ -168,7 +211,6 @@ Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to 
     setInterval(nextSlide, 5000);
   });
 </script>
-
 
 <hr>
 
