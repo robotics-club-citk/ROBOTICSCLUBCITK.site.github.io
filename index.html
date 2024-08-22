@@ -16,10 +16,7 @@ layout: default
         <h1 class="title">About us</h1>
         <p>
         
-Are you ready to unleash your creativity and dive into the world of robotics? The Robotics Club at CITK is your launchpad to build your very own robot or bring your next great electronics project to life! Whether you're a seasoned tech enthusiast or just getting started, our club offers the perfect space to turn your innovative ideas into reality.
-
-<p>Join us and be part of a community where imagination meets cutting-edge technology. We provide the tools, components, and expert guidance you need to explore the rapidly evolving world of robotics. With exciting seminars, hands-on workshops, and in-depth tutorials, the possibilities are endless. So, what are you waiting for? Step up, join the adventure, and let's create something extraordinary together!</p>
-        </p>
+Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to building robots and crafting innovative electronics projects. Whether you're a tech pro or just starting out, we offer the tools, guidance, and community you need. Join us for hands-on workshops, seminars, and endless possibilities. Don't wait—dive into the world of robotics and create something extraordinary with us!
       </div>
     </div>
 
@@ -29,31 +26,30 @@ Are you ready to unleash your creativity and dive into the world of robotics? Th
 
   </div>
 </div>
-
 <!-- Image Gallery Section -->
 <div class="section">
   <div class="container">
     <h2 class="gallery-title">Image Gallery</h2>
-    <div class="slider">
-      <div class="slider-wrapper">
-        <div class="slider-images">
-          <div class="slider-item">
+    <div class="carousel-slider">
+      <div class="carousel-wrapper">
+        <div class="carousel-images">
+          <div class="carousel-item">
             <img src="{{ site.baseurl }}/assets/img/gallery/1535136969180x3820.jpg" alt="Image 1">
-            <div class="caption">Image 1 Description: Robotics Workshop</div>
+            <div class="caption">Robotics Workshop: Hands-on Session</div>
           </div>
-          <div class="slider-item">
+          <div class="carousel-item">
             <img src="{{ site.baseurl }}/assets/img/gallery/1535138256706x5469.jpg" alt="Image 2">
-            <div class="caption">Image 2 Description: Project Presentation</div>
+            <div class="caption">Project Presentation: Sharing Ideas</div>
           </div>
-          <div class="slider-item">
+          <div class="carousel-item">
             <img src="{{ site.baseurl }}/assets/img/gallery/DSC03607.jpg" alt="Image 3">
-            <div class="caption">Image 3 Description: Team Collaboration</div>
+            <div class="caption">Team Collaboration: Working Together</div>
           </div>
         </div>
       </div>
-      <!-- Slider Controls -->
-      <button class="slider-control prev">&lt;</button>
-      <button class="slider-control next">&gt;</button>
+      <!-- Carousel Controls -->
+      <button class="carousel-control prev">&lt;</button>
+      <button class="carousel-control next">&gt;</button>
     </div>
   </div>
 </div>
@@ -67,51 +63,54 @@ Are you ready to unleash your creativity and dive into the world of robotics? Th
     font-weight: bold;
   }
 
-  .slider {
+  .carousel-slider {
     position: relative;
     max-width: 800px;
     margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
+    perspective: 1000px;
   }
 
-  .slider-wrapper {
+  .carousel-wrapper {
     overflow: hidden;
     position: relative;
   }
 
-  .slider-images {
+  .carousel-images {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
   }
 
-  .slider-item {
+  .carousel-item {
+    min-width: 300px;
+    margin: 0 15px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    transform: scale(0.85);
+    opacity: 0.6;
     position: relative;
-    min-width: 100%;
     text-align: center;
   }
 
-  .slider-item img {
+  .carousel-item img {
     width: 100%;
     height: 400px;
     object-fit: cover;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .carousel-item.active {
+    transform: scale(1);
+    opacity: 1;
   }
 
   .caption {
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
+    margin-top: 10px;
     font-size: 1rem;
+    color: #333;
   }
 
-  .slider-control {
+  .carousel-control {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -124,45 +123,47 @@ Are you ready to unleash your creativity and dive into the world of robotics? Th
     z-index: 100;
   }
 
-  .slider-control.prev {
+  .carousel-control.prev {
     left: 10px;
   }
 
-  .slider-control.next {
+  .carousel-control.next {
     right: 10px;
   }
 
-  .slider-control:hover {
+  .carousel-control:hover {
     background-color: rgba(0, 0, 0, 0.7);
   }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const sliderImages = document.querySelector('.slider-images');
-    const items = document.querySelectorAll('.slider-item');
-    const prevButton = document.querySelector('.slider-control.prev');
-    const nextButton = document.querySelector('.slider-control.next');
+    const carouselImages = document.querySelector('.carousel-images');
+    const items = document.querySelectorAll('.carousel-item');
+    const prevButton = document.querySelector('.carousel-control.prev');
+    const nextButton = document.querySelector('.carousel-control.next');
     let currentIndex = 0;
 
-    function showSlide(index) {
-      if (index >= items.length) {
-        currentIndex = 0;
-      } else if (index < 0) {
-        currentIndex = items.length - 1;
-      } else {
-        currentIndex = index;
-      }
-      const offset = -currentIndex * 100;
-      sliderImages.style.transform = `translateX(${offset}%)`;
+    function updateCarousel() {
+      items.forEach((item, index) => {
+        item.classList.remove('active');
+        if (index === currentIndex) {
+          item.classList.add('active');
+        }
+      });
+
+      const offset = -currentIndex * (items[0].offsetWidth + 30); // Adjust for margin
+      carouselImages.style.transform = `translateX(${offset}px)`;
     }
 
     function nextSlide() {
-      showSlide(currentIndex + 1);
+      currentIndex = (currentIndex + 1) % items.length;
+      updateCarousel();
     }
 
     function prevSlide() {
-      showSlide(currentIndex - 1);
+      currentIndex = (currentIndex - 1 + items.length) % items.length;
+      updateCarousel();
     }
 
     nextButton.addEventListener('click', nextSlide);
@@ -170,9 +171,11 @@ Are you ready to unleash your creativity and dive into the world of robotics? Th
 
     // Auto-slide every 5 seconds
     setInterval(nextSlide, 5000);
+
+    // Initial setup
+    updateCarousel();
   });
 </script>
-
 
 <hr>
 
