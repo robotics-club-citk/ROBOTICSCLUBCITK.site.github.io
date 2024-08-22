@@ -30,15 +30,15 @@ Are you ready to unleash your creativity and dive into the world of robotics? Th
   </div>
 </div>
 
-
 <!-- Image Slider -->
 <div class="section">
   <div class="container">
     <div class="slider">
       <div class="slider-images">
-        <img src="{{ site.baseurl }}/assets/img/gallery/1535136969180x3820.jpg" alt="Slider Image 1">
-        <img src="{{ site.baseurl }}/assets/img/gallery/1535138256706x5469.jpg" alt="Slider Image 2">
-        <img src="{{ site.baseurl }}/assets/img/gallery/DSC03607.jpg" alt="Slider Image 3">
+        {% assign gallery_images = site.static_files | where: "path", "/assets/img/gallery" %}
+        {% for image in gallery_images %}
+          <img src="{{ site.baseurl }}{{ image.path }}" alt="Gallery Image">
+        {% endfor %}
       </div>
     </div>
   </div>
@@ -72,6 +72,7 @@ Are you ready to unleash your creativity and dive into the world of robotics? Th
     100% { transform: translateX(0%); }
   }
 </style>
+
 
 <hr>
 
