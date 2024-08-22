@@ -26,30 +26,31 @@ Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to 
 
   </div>
 </div>
+<hr>
 <!-- Image Gallery Section -->
 <div class="section">
   <div class="container">
     <h2 class="gallery-title">Image Gallery</h2>
-    <div class="carousel-slider">
-      <div class="carousel-wrapper">
-        <div class="carousel-images">
-          <div class="carousel-item">
+    <div class="slider">
+      <div class="slider-wrapper">
+        <div class="slider-images">
+          <div class="slider-item">
             <img src="{{ site.baseurl }}/assets/img/gallery/1535136969180x3820.jpg" alt="Image 1">
             <div class="caption">Robotics Workshop: Hands-on Session</div>
           </div>
-          <div class="carousel-item">
+          <div class="slider-item">
             <img src="{{ site.baseurl }}/assets/img/gallery/1535138256706x5469.jpg" alt="Image 2">
             <div class="caption">Project Presentation: Sharing Ideas</div>
           </div>
-          <div class="carousel-item">
+          <div class="slider-item">
             <img src="{{ site.baseurl }}/assets/img/gallery/DSC03607.jpg" alt="Image 3">
             <div class="caption">Team Collaboration: Working Together</div>
           </div>
         </div>
       </div>
-      <!-- Carousel Controls -->
-      <button class="carousel-control prev">&lt;</button>
-      <button class="carousel-control next">&gt;</button>
+      <!-- Slider Controls -->
+      <button class="slider-control prev">&lt;</button>
+      <button class="slider-control next">&gt;</button>
     </div>
   </div>
 </div>
@@ -63,54 +64,51 @@ Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to 
     font-weight: bold;
   }
 
-  .carousel-slider {
+  .slider {
     position: relative;
     max-width: 800px;
     margin: 20px auto;
-    perspective: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
   }
 
-  .carousel-wrapper {
+  .slider-wrapper {
     overflow: hidden;
     position: relative;
   }
 
-  .carousel-images {
+  .slider-images {
     display: flex;
-    transition: transform 0.8s ease;
-    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
   }
 
-  .carousel-item {
-    min-width: 300px;
-    margin: 0 15px;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    transform: scale(0.85);
-    opacity: 0.6;
+  .slider-item {
     position: relative;
+    min-width: 100%;
     text-align: center;
   }
 
-  .carousel-item img {
+  .slider-item img {
     width: 100%;
     height: 400px;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-
-  .carousel-item.active {
-    transform: scale(1);
-    opacity: 1;
   }
 
   .caption {
-    margin-top: 10px;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
     font-size: 1rem;
-    color: #333;
   }
 
-  .carousel-control {
+  .slider-control {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -123,47 +121,45 @@ Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to 
     z-index: 100;
   }
 
-  .carousel-control.prev {
+  .slider-control.prev {
     left: 10px;
   }
 
-  .carousel-control.next {
+  .slider-control.next {
     right: 10px;
   }
 
-  .carousel-control:hover {
+  .slider-control:hover {
     background-color: rgba(0, 0, 0, 0.7);
   }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const carouselImages = document.querySelector('.carousel-images');
-    const items = document.querySelectorAll('.carousel-item');
-    const prevButton = document.querySelector('.carousel-control.prev');
-    const nextButton = document.querySelector('.carousel-control.next');
+    const sliderImages = document.querySelector('.slider-images');
+    const items = document.querySelectorAll('.slider-item');
+    const prevButton = document.querySelector('.slider-control.prev');
+    const nextButton = document.querySelector('.slider-control.next');
     let currentIndex = 0;
 
-    function updateCarousel() {
-      items.forEach((item, index) => {
-        item.classList.remove('active');
-        if (index === currentIndex) {
-          item.classList.add('active');
-        }
-      });
-
-      const offset = -currentIndex * (items[0].offsetWidth + 30); // Adjust for margin
-      carouselImages.style.transform = `translateX(${offset}px)`;
+    function showSlide(index) {
+      if (index >= items.length) {
+        currentIndex = 0;
+      } else if (index < 0) {
+        currentIndex = items.length - 1;
+      } else {
+        currentIndex = index;
+      }
+      const offset = -currentIndex * 100;
+      sliderImages.style.transform = `translateX(${offset}%)`;
     }
 
     function nextSlide() {
-      currentIndex = (currentIndex + 1) % items.length;
-      updateCarousel();
+      showSlide(currentIndex + 1);
     }
 
     function prevSlide() {
-      currentIndex = (currentIndex - 1 + items.length) % items.length;
-      updateCarousel();
+      showSlide(currentIndex - 1);
     }
 
     nextButton.addEventListener('click', nextSlide);
@@ -171,9 +167,6 @@ Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to 
 
     // Auto-slide every 5 seconds
     setInterval(nextSlide, 5000);
-
-    // Initial setup
-    updateCarousel();
   });
 </script>
 
