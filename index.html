@@ -30,15 +30,25 @@ Are you ready to unleash your creativity and dive into the world of robotics? Th
   </div>
 </div>
 
-<!-- Image Slider -->
+<!-- Image Gallery Section -->
 <div class="section">
   <div class="container">
+    <h2 class="gallery-title">Image Gallery</h2>
     <div class="slider">
       <div class="slider-wrapper">
         <div class="slider-images">
-          <img src="{{ site.baseurl }}/assets/img/gallery/1535136969180x3820.jpg" alt="Slider Image 1">
-          <img src="{{ site.baseurl }}/assets/img/gallery/1535138256706x5469.jpg" alt="Slider Image 2">
-          <img src="{{ site.baseurl }}/assets/img/gallery/DSC03607.jpg" alt="Slider Image 3">
+          <div class="slider-item">
+            <img src="{{ site.baseurl }}/assets/img/gallery/1535136969180x3820.jpg" alt="Image 1">
+            <div class="caption">Image 1 Description: Robotics Workshop</div>
+          </div>
+          <div class="slider-item">
+            <img src="{{ site.baseurl }}/assets/img/gallery/1535138256706x5469.jpg" alt="Image 2">
+            <div class="caption">Image 2 Description: Project Presentation</div>
+          </div>
+          <div class="slider-item">
+            <img src="{{ site.baseurl }}/assets/img/gallery/DSC03607.jpg" alt="Image 3">
+            <div class="caption">Image 3 Description: Team Collaboration</div>
+          </div>
         </div>
       </div>
       <!-- Slider Controls -->
@@ -49,6 +59,14 @@ Are you ready to unleash your creativity and dive into the world of robotics? Th
 </div>
 
 <style>
+  .gallery-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+  }
+
   .slider {
     position: relative;
     max-width: 800px;
@@ -68,9 +86,29 @@ Are you ready to unleash your creativity and dive into the world of robotics? Th
     transition: transform 0.5s ease-in-out;
   }
 
-  .slider-images img {
+  .slider-item {
+    position: relative;
+    min-width: 100%;
+    text-align: center;
+  }
+
+  .slider-item img {
     width: 100%;
+    height: 400px;
+    object-fit: cover;
     border-radius: 10px;
+  }
+
+  .caption {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
   }
 
   .slider-control {
@@ -102,16 +140,16 @@ Are you ready to unleash your creativity and dive into the world of robotics? Th
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const sliderImages = document.querySelector('.slider-images');
-    const images = document.querySelectorAll('.slider-images img');
+    const items = document.querySelectorAll('.slider-item');
     const prevButton = document.querySelector('.slider-control.prev');
     const nextButton = document.querySelector('.slider-control.next');
     let currentIndex = 0;
 
     function showSlide(index) {
-      if (index >= images.length) {
+      if (index >= items.length) {
         currentIndex = 0;
       } else if (index < 0) {
-        currentIndex = images.length - 1;
+        currentIndex = items.length - 1;
       } else {
         currentIndex = index;
       }
