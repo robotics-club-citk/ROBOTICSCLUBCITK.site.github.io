@@ -30,34 +30,22 @@ Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to 
 <!-- Image Gallery Section -->
 <div class="section">
   <div class="container">
+    <h2 class="gallery-title">Image Gallery</h2>
     <div class="slider">
       <div class="slider-wrapper">
         <div class="slider-images">
           <div class="slider-item">
-            <div class="slider-content">
-              <img src="{{ site.baseurl }}/assets/img/gallery/1535136969180x3820.jpg" alt="Image 1" class="main-image">
-              <img src="{{ site.baseurl }}/assets/img/gallery/small_image1.jpg" alt="Small Image 1" class="small-image">
-              <div class="circle-overlay"></div>
-              <div class="slider-text">
-                <h2>We help clients solve complex business problems</h2>
-                <p>From ideation to execution, our team provides expert solutions to your most pressing challenges.</p>
-                <a href="#" class="button is-primary">Learn More</a>
-              </div>
-            </div>
+            <img src="{{ site.baseurl }}/assets/img/gallery/1535136969180x3820.jpg" alt="Image 1">
+            <div class="caption">Robotics Workshop: Hands-on Session</div>
           </div>
           <div class="slider-item">
-            <div class="slider-content">
-              <img src="{{ site.baseurl }}/assets/img/gallery/1535138256706x5469.jpg" alt="Image 2" class="main-image">
-              <img src="{{ site.baseurl }}/assets/img/gallery/small_image2.jpg" alt="Small Image 2" class="small-image">
-              <div class="circle-overlay"></div>
-              <div class="slider-text">
-                <h2>Project Presentation: Sharing Ideas</h2>
-                <p>Showcase your innovative ideas in our collaborative environment.</p>
-                <a href="#" class="button is-primary">Join Us</a>
-              </div>
-            </div>
+            <img src="{{ site.baseurl }}/assets/img/gallery/1535138256706x5469.jpg" alt="Image 2">
+            <div class="caption">Project Presentation: Sharing Ideas</div>
           </div>
-          <!-- Additional slider items go here -->
+          <div class="slider-item">
+            <img src="{{ site.baseurl }}/assets/img/gallery/DSC03607.jpg" alt="Image 3">
+            <div class="caption">Team Collaboration: Working Together</div>
+          </div>
         </div>
       </div>
       <!-- Slider Controls -->
@@ -68,6 +56,14 @@ Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to 
 </div>
 
 <style>
+  .gallery-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+  }
+
   .slider {
     position: relative;
     max-width: 800px;
@@ -90,59 +86,26 @@ Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to 
   .slider-item {
     position: relative;
     min-width: 100%;
+    text-align: center;
   }
 
-  .slider-content {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .main-image {
-    width: 70%;
+  .slider-item img {
+    width: 100%;
     height: 400px;
     object-fit: cover;
     border-radius: 10px;
   }
 
-  .small-image {
-    width: 20%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
+  .caption {
     position: absolute;
     bottom: 10%;
-    right: 15%;
-  }
-
-  .circle-overlay {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
-    top: 20px;
-    left: 20px;
-  }
-
-  .slider-text {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: right;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
-  }
-
-  .slider-text h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-
-  .slider-text p {
+    padding: 10px 20px;
+    border-radius: 5px;
     font-size: 1rem;
-    margin-bottom: 20px;
   }
 
   .slider-control {
@@ -188,7 +151,7 @@ Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to 
         currentIndex = index;
       }
       const offset = -currentIndex * 100;
-      sliderImages.style.transform = `translateX(${offset}%)`;
+      sliderImages.style.transform = translateX(${offset}%);
     }
 
     function nextSlide() {
@@ -206,7 +169,6 @@ Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to 
     setInterval(nextSlide, 5000);
   });
 </script>
-
 
 <hr>
 
