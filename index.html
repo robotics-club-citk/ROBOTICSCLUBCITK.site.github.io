@@ -29,6 +29,50 @@ Are you ready to unleash your creativity and dive into the world of robotics? Th
 
   </div>
 </div>
+
+
+<!-- Image Slider -->
+<div class="section">
+  <div class="container">
+    <div class="slider">
+      <div class="slider-images">
+        <img src="{{ site.baseurl }}/assets/img/gallery/1535136969180x3820.jpg" alt="Slider Image 1">
+        <img src="{{ site.baseurl }}/assets/img/gallery/1535138256706x5469.jpg" alt="Slider Image 2">
+        <img src="{{ site.baseurl }}/assets/img/gallery/DSC03607.jpg" alt="Slider Image 3">
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .slider {
+    position: relative;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .slider-images {
+    display: flex;
+    width: 300%;
+    animation: slide 15s infinite;
+  }
+
+  .slider-images img {
+    width: 33.333%;
+    border-radius: 10px;
+  }
+
+  @keyframes slide {
+    0% { transform: translateX(0%); }
+    25% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    100% { transform: translateX(0%); }
+  }
+</style>
+
 <hr>
 
 <!-- Faculty and Convenors -->
