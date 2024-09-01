@@ -7,4 +7,5 @@ images:
   - path: "30aug1.jpg"
     size: 1366x911
     caption: session pic
+---
   
