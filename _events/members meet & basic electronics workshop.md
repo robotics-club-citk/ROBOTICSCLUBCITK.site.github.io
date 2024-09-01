@@ -1,13 +1,13 @@
 ---
-title: Orientation Program 2022
-description: Joining of new students in Robotics Club CIT Kokrajhar, Rules and regulations are informed to the students and interaction with co-ordinators took place
-start-date: 2022-04-06 16:30:00
-place: Seminar Hall 2, CIT Kokrajhar
+title: Members meet & workshop on basic robotics
+description: interaction session of new joinees with the club chief convenor, convenors, co- ordinator, core members along with a basic robotics workshop
+start-date: 2024-08-31 10:30:00
+place: VCR , CIT Kokrajhar
 images:
-  - path: "assets/img/gallery/o2022a.jpg"
+  - path: "assets/img/gallery/m1.webp"
     size: 1366x911
-    caption: Orientation program 2022
-  - path: "assets/img/gallery/o2022b.jpg"
+    caption: members meet
+  - path: "assets/img/gallery/m2.jpg"
     size: 1366x911
-    caption: Orientation program 2022
+    caption: members mee session 1
 ---
