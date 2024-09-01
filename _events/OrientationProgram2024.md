@@ -4,7 +4,7 @@ description: Joining of new students in Robotics Club CIT Kokrajhar, Rules and r
 start-date: 2024-08-22 16:30:00
 place: BKB Seminar Hall, CIT Kokrajhar
 images:
-  - path: "assets/img/gallery/banner.png"
+  - path: "assets/img/gallery/banner.PNG"
     size: 1080x1350
     caption: Orientation program 2024
   - path: "assets/img/gallery/orientation3.jpg"
