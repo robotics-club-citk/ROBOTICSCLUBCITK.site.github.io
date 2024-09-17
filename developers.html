@@ -20,9 +20,9 @@ description: Web developers of Robotics Club CIT Kokrajhar
       <div class="column is-half-tablet is-one-third-desktop">
         <div class="box has-text-centered">
           <figure class="r-avatar image is-96x96">
-            <img alt="Image of {{ member.name }}" class="is-rounded"
-              src="{{ site.baseurl }}/assets/img/avatars/members/{{ member.avatar }}">
-          </figure>
+           <img alt="Image of {{ member.name }}" class="is-rounded"
+  src="{{ site.baseurl }}/assets/img/avatars/members/{{ member.avatar | append: ".jpg" }}">
+</figure>
           <br> <br>
           <p class="r-name has-text-weight-semibold is-capitalized">{{ member.name }}</p>
           <p class="is-size-7">
