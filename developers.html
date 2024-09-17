@@ -12,7 +12,7 @@ description: Web developers of Robotics Club CIT Kokrajhar
     </h1>
     <hr>
 
-    <h3 class="has-text-weight-semibold" style="margin-bottom:16px">Website:</h3>
+    <h3 class="has-text-weight-semibold" style="margin-bottom:16px">Website Developer :</h3>
     {% assign members = site.members %}
     <div class="columns is-multiline">
       {% for member in members %}
@@ -20,10 +20,10 @@ description: Web developers of Robotics Club CIT Kokrajhar
       <div class="column is-half-tablet is-one-third-desktop">
         <div class="box has-text-centered">
           <figure class="r-avatar image is-96x96">
-            <img alt="Image of {{ member.name }}" class="is-rounded"
-              src="{{ site.baseurl }}/assets/img/avatars/members/Peter.jpg">
+            <img alt="Image of Peter" class="is-rounded"
+              src="{{ site.baseurl }}/images/Peter.jpg">
           </figure>
-          <br> <br>
+          <br><br>
           <p class="r-name has-text-weight-semibold is-capitalized">{{ member.name }}</p>
           <p class="is-size-7">
             <span class="icon has-text-danger"><i class="fa fa-envelope"></i></span>
@@ -38,7 +38,6 @@ description: Web developers of Robotics Club CIT Kokrajhar
               <span>View Profile</span>
             </a>
           </div>
-
         </div>
       </div>
       {% endif %}
@@ -57,7 +56,7 @@ description: Web developers of Robotics Club CIT Kokrajhar
             <img alt="Image of {{ member.name }}" class="is-rounded"
               src="{{ site.baseurl }}/assets/img/avatars/members/{{ member.avatar }}">
           </figure>
-          <br> <br>
+          <br><br>
           <p class="r-name has-text-weight-semibold is-capitalized">{{ member.name }}</p>
           <p class="is-size-7">
             <span class="icon has-text-danger"><i class="fa fa-envelope"></i></span>
@@ -72,7 +71,6 @@ description: Web developers of Robotics Club CIT Kokrajhar
               <span>View Profile</span>
             </a>
           </div>
-
         </div>
       </div>
       {% endif %}
