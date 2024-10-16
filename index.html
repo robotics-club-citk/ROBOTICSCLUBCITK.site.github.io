@@ -284,25 +284,101 @@ Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to 
     <hr style="border: none; height: 2px; background-color: #ddd; margin: 2rem 0;">
 
     <!-- Convenors Section -->
-    <div class="section">
-      <h2 class="title is-4 has-text-centered">CONVENORS</h2>
-      <div class="columns is-centered">
-        <div class="column is-one-third has-text-centered">
-          <figure class="image is-128x128 is-inline-block">
-            <img style="width: 128px; height: 128px; object-fit: cover; border-radius: 50%;" src="{{ site.baseurl }}/images/Ritusha.jpg" alt="Ritusha Bora">
-          </figure>
-          <p>Ritusha Bora</p>
+  <!-- Convenors Section -->
+<div class="section">
+  <h2 class="title is-4 has-text-centered">CONVENORS</h2>
+  <div class="columns is-centered">
+    <div class="column is-one-third has-text-centered">
+      <figure class="image is-128x128 is-inline-block team-photo-container">
+        <img style="width: 128px; height: 128px; object-fit: cover; border-radius: 50%;" src="{{ site.baseurl }}/images/Ritusha.jpg" alt="Ritusha Bora" class="team-photo">
+        <div class="popup">
+          <h3>Ritusha Bora</h3>
+          <p>Some information about Ritusha Bora.</p>
+          <div class="social-icons">
+            <a href="https://facebook.com/ritusha" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/ritusha" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com/in/ritusha" target="_blank"><i class="fab fa-linkedin"></i></a>
+          </div>
         </div>
-        <div class="column is-one-third has-text-centered">
-          <figure class="image is-128x128 is-inline-block">
-            <img style="width: 128px; height: 128px; object-fit: cover; border-radius: 50%;" src="{{ site.baseurl }}/images/Peter.jpg" alt="Peter Basumatary">
-          </figure>
-          <p>Peter Basumatary</p>
+      </figure>
+      <p>Ritusha Bora</p>
+    </div>
+    <div class="column is-one-third has-text-centered">
+      <figure class="image is-128x128 is-inline-block team-photo-container">
+        <img style="width: 128px; height: 128px; object-fit: cover; border-radius: 50%;" src="{{ site.baseurl }}/images/Peter.jpg" alt="Peter Basumatary" class="team-photo">
+        <div class="popup">
+          <h3>Peter Basumatary</h3>
+          <p>Some information about Peter Basumatary.</p>
+          <div class="social-icons">
+            <a href="https://facebook.com/peter" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/peter" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com/in/peter" target="_blank"><i class="fab fa-linkedin"></i></a>
+          </div>
         </div>
-      </div>
+      </figure>
+      <p>Peter Basumatary</p>
     </div>
   </div>
 </div>
+<style>
+  .team-photo-container {
+    position: relative;
+    display: inline-block;
+}
+
+.team-photo {
+    transition: transform 0.3s ease;
+}
+
+.team-photo:hover {
+    transform: scale(1.05);
+}
+
+.popup {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1;
+}
+
+.team-photo-container:hover .popup {
+    display: block;
+}
+
+.popup h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.popup p {
+    margin: 5px 0 10px;
+    font-size: 14px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.social-icons a {
+    color: #555;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}
+
+</style>
 
 <hr>
 
