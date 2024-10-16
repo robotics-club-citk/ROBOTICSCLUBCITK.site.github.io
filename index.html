@@ -204,21 +204,21 @@ document.addEventListener('DOMContentLoaded', function () {
   sliderImages.insertBefore(lastItem, items[0]);
 
   function showSlide(index) {
-    // Adjust the current index to account for cloned slides
-    const totalItems = items.length + 2; // Account for the two cloned items
+    
+    const totalItems = items.length + 2;
     if (index >= totalItems) {
-      currentIndex = 1; // Move to the first real slide
-      sliderImages.style.transition = 'none'; // Disable transition for instant jump
+      currentIndex = 1; 
+      sliderImages.style.transition = 'none';
       sliderImages.style.transform = `translateX(${-100}%)`;
       setTimeout(() => {
-        sliderImages.style.transition = 'transform 0.5s ease'; // Re-enable transition
+        sliderImages.style.transition = 'transform 0.5s ease';
       }, 20);
     } else if (index < 0) {
-      currentIndex = totalItems - 2; // Move to the last real slide
-      sliderImages.style.transition = 'none'; // Disable transition for instant jump
+      currentIndex = totalItems - 2; 
+      sliderImages.style.transition = 'none'; 
       sliderImages.style.transform = `translateX(${-100 * (currentIndex + 1)}%)`;
       setTimeout(() => {
-        sliderImages.style.transition = 'transform 0.5s ease'; // Re-enable transition
+        sliderImages.style.transition = 'transform 0.5s ease';
       }, 20);
     } else {
       currentIndex = index;
@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function updateIndicators() {
     indicators.forEach((indicator, index) => {
-      indicator.classList.toggle('active', index === (currentIndex - 1)); // Adjust for indicators
+      indicator.classList.toggle('active', index === (currentIndex - 1));
     });
   }
 
@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   indicators.forEach(indicator => {
     indicator.addEventListener('click', () => {
-      showSlide(parseInt(indicator.getAttribute('data-index')) + 1); // Adjust for indicators
+      showSlide(parseInt(indicator.getAttribute('data-index')) + 1);
     });
   });
 
@@ -293,21 +293,30 @@ document.addEventListener('DOMContentLoaded', function () {
     <!-- Divider Line -->
     <hr style="border: none; height: 2px; background-color: #ddd; margin: 2rem 0;">
 
-    <!-- Chief Convenor Section -->
-    <div class="section">
-      <h2 class="title is-4 has-text-centered">CHIEF-CONVENOR</h2>
-      <div class="columns is-centered">
-        <div class="column is-half has-text-centered">
-          <a href="https://iamshamimsr.online" target="_blank" title="Tap to know about me">
-  <figure class="image is-128x128 is-inline-block">
-    <img style="width: 128px; height: 128px; object-fit: cover; border-radius: 50%;" src="{{ site.baseurl }}/images/shamim.jpeg" alt="Shamim Shahinur Rahman">
-  </figure>
-</a>
-
-          <p>Shamim Shahinur Rahman</p>
-        </div>
-      </div>
+   <!-- Chief Convenor Section -->
+<div class="section">
+  <h2 class="title is-4 has-text-centered">CHIEF-CONVENOR</h2>
+  <div class="columns is-centered">
+    <div class="column is-half has-text-centered team-photo-container">
+      <a href="https://iamshamimsr.online" target="_blank" title="Tap to know about me">
+        <figure class="image is-128x128 is-inline-block">
+          <img style="width: 128px; height: 128px; object-fit: cover; border-radius: 50%;" src="{{ site.baseurl }}/images/shamim.jpeg" alt="Shamim Shahinur Rahman" class="team-photo">
+          <div class="popup">
+            <h3>Shamim Shahinur Rahman</h3>
+            <p>Know more about me.</p>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/shamim.sr" target="_blank"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.linkedin.com/in/shamim-sr/" target="_blank"><i class="fab fa-linkedin"></i></a>
+              <a href="https://www.instagram.com/shamimshahinurrahman/" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://iamshamimsr.online/" target="_blank"><i class="fa fa-link"></i></a>
+            </div>
+          </div>
+        </figure>
+      </a>
+      <p>Shamim Shahinur Rahman</p>
     </div>
+  </div>
+</div>
 
     <!-- Divider Line -->
     <hr style="border: none; height: 2px; background-color: #ddd; margin: 2rem 0;">
@@ -357,56 +366,61 @@ document.addEventListener('DOMContentLoaded', function () {
     display: inline-block;
 }
 
+.team-photo-container {
+  position: relative;
+  display: inline-block;
+}
+
 .team-photo {
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .team-photo:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .popup {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 200px;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    display: none;
-    z-index: 1;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 1;
 }
 
 .team-photo-container:hover .popup {
-    display: block;
+  display: block;
 }
 
 .popup h3 {
-    margin: 0;
-    font-size: 18px;
+  margin: 0;
+  font-size: 18px;
 }
 
 .popup p {
-    margin: 5px 0 10px;
-    font-size: 14px;
+  margin: 5px 0 10px;
+  font-size: 14px;
 }
 
 .social-icons {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 .social-icons a {
-    color: #555;
-    font-size: 20px;
-    transition: color 0.3s;
+  color: #555;
+  font-size: 20px;
+  transition: color 0.3s;
 }
 
 .social-icons a:hover {
-    color: #007bff;
+  color: #007bff;
 }
 
 </style>
