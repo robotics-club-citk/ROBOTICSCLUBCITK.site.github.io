@@ -6,102 +6,73 @@ description: Web developers of Robotics Club CIT Kokrajhar
 
 <div class="section">
   <div class="container">
-    <h1 class="title">Website development & management</h1>
+    <h1 class="title">Website Development & Management</h1>
     <h1 class="subtitle">This page contains information about this site and how to manage it. The inner workings
-      of the site is explained here so that anyone having basic knowledge of web development can easily manage the site.
+      of the site are explained here so that anyone having basic knowledge of web development can easily manage the site.
     </h1>
     <hr>
 
-    <h3 class="has-text-weight-semibold" style="margin-bottom:16px">Webmaster:</h3>
+    <h3 class="has-text-weight-semibold" style="margin-bottom:16px">Webmasters:</h3>
     {% assign members = site.members %}
     <div class="columns is-multiline">
       {% for member in members %}
-      {% if member.username == 'Peter' %}
-      <div class="column is-half-tablet is-one-third-desktop">
-        <div class="box has-text-centered">
-          <figure class="r-avatar image is-96x96">
-            <img alt="Image of Peter" class="is-rounded"
-              src="{{ site.baseurl }}/images/Peter.jpg">
-          </figure>
-          <br><br>
-          <p class="r-name has-text-weight-semibold is-capitalized">{{ member.name }}</p>
-          <p class="is-size-7">
-            <span class="icon has-text-danger"><i class="fa fa-envelope"></i></span>
-            <span class="has-text-weight-semibold">{{ member.email }}</span>
-          </p>
-          <hr>
-          <div>
-            <a class="r-profile-btn button is-small is-rounded is-primary" href="{{ member.url }}">
-              <span class="icon is-small">
-                <i class="fa fa-user"></i>
-              </span>
-              <span>View Profile</span>
-            </a>
+        {% if member.username == 'Peter' or member.username == 'shamim' %}
+        <div class="column is-half-tablet is-one-third-desktop">
+          <div class="box has-text-centered">
+            <figure class="r-avatar image is-96x96">
+              <img alt="Image of {{ member.name }}" class="is-rounded round-image"
+                src="{{ member.username == 'Peter' ? site.baseurl + '/images/Peter.jpg' : site.baseurl + '/assets/img/avatars/members/' + member.avatar }}">
+            </figure>
+            <br><br>
+            <p class="r-name has-text-weight-semibold is-capitalized">{{ member.name }}</p>
+            <p class="is-size-7">
+              <span class="icon has-text-danger"><i class="fa fa-envelope"></i></span>
+              <span class="has-text-weight-semibold">{{ member.email }}</span>
+            </p>
+            <hr>
+            <div>
+              <a class="r-profile-btn button is-small is-rounded is-primary" href="{{ member.url }}">
+                <span class="icon is-small">
+                  <i class="fa fa-user"></i>
+                </span>
+                <span>View Profile</span>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      {% endif %}
-      {% endfor %}
-
-      {% for member in members %}
-      {% if member.username == 'shamim' %}
-      <div class="column is-half-tablet is-one-third-desktop">
-        <div class="box has-text-centered">
-          <figure class="r-avatar image is-96x96">
-            <img alt="Image of {{ member.name }}" class="is-rounded"
-              src="{{ site.baseurl }}/assets/img/avatars/members/{{ member.avatar }}">
-          </figure>
-          <br><br>
-          <p class="r-name has-text-weight-semibold is-capitalized">{{ member.name }}</p>
-          <p class="is-size-7">
-            <span class="icon has-text-danger"><i class="fa fa-envelope"></i></span>
-            <span class="has-text-weight-semibold">{{ member.email }}</span>
-          </p>
-          <hr>
-          <div>
-            <a class="r-profile-btn button is-small is-rounded is-primary" href="{{ member.url }}">
-              <span class="icon is-small">
-                <i class="fa fa-user"></i>
-              </span>
-              <span>View Profile</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      {% endif %}
+        {% endif %}
       {% endfor %}
     </div>
     <hr>
 
+    <h3 class="has-text-weight-semibold" style="margin-bottom:16px">Source Code:</h3>
     <p>
-      <h3 class="has-text-weight-semibold" style="margin-bottom:16px">Source code:</h3>
       <a class="button" href="https://github.com/robotics-club-citk/robotics-club-citk.github.io">
         <span class="icon">
           <i class="fab fa-github"></i>
         </span>
-        <span>View source code on GitHub</span>
+        <span>View Source Code on GitHub</span>
       </a>
     </p>
-
   </div>
 </div>
 
 <div class="section">
   <div class="container">
-    <h3 class="has-text-weight-semibold" style="margin-bottom:16px">About the site:</h3>
+    <h3 class="has-text-weight-semibold" style="margin-bottom:16px">About the Site:</h3>
     <p>This site is developed using <a href="https://jekyllrb.com">Jekyll</a> (a popular static site generator) and
-      hosted in GitHub as <a href="https://pages.github.com/">GitHub Pages</a>. We are using GitHub as a hosting
-      platform because it's very easy to develop the site using GitHub and it's free 😉</p>
+      hosted on GitHub as <a href="https://pages.github.com/">GitHub Pages</a>. We use GitHub as a hosting
+      platform because it's very easy to develop the site using GitHub, and it's free 😉</p>
 
     <br><br>
 
-    <h3 class="has-text-weight-semibold" style="margin-bottom:16px">What you should know?</h3>
+    <h3 class="has-text-weight-semibold" style="margin-bottom:16px">What You Should Know:</h3>
     <p>To maintain the site:</p>
     <div class="content">
       <ul>
         <li>Basic Git workflow</li>
         <li>How GitHub works</li>
-        <li>Basic understanding of Web Development</li>
+        <li>Basic understanding of web development</li>
       </ul>
     </div>
     <p>To develop the site further:</p>
@@ -118,6 +89,13 @@ description: Web developers of Robotics Club CIT Kokrajhar
         <li><a href="https://jekyllrb.com/">Jekyll</a></li>
       </ul>
     </div>
-
   </div>
 </div>
+
+<style>
+.round-image {
+    width: 96px;  /* Adjust according to your requirements */
+    height: 96px; /* Adjust according to your requirements */
+    border-radius: 50%; /* Makes the image round */
+}
+</style>
