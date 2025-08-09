@@ -14,12 +14,12 @@ layout: default
         </a>
       </p>
       <p class="control">
-        <a class="button is-link" href="#convenor">
+        <a class="button is-link" href="#core-members">
           CONVENOR
         </a>
       </p>
       <p class="control">
-        <a class="button is-danger" href="#coordinator">
+        <a class="button is-danger" href="#coordinators">
           COORDINATOR
         </a>
       </p>
@@ -75,7 +75,7 @@ layout: default
     <hr>
 
     {% assign members = site.members | where:'type','COORDINATOR' | sort: 'priority' | reverse %}
-    <h1 class="title" id="members">COORDINATOR</h1>
+    <h1 class="title" id="coordinators">COORDINATOR</h1>
     <div class="columns is-multiline">
       {% for member in members %}
       <div class="column is-one-quarter-tablet is-one-fifth-desktop">
