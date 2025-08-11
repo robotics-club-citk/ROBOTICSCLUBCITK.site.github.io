@@ -5,7 +5,7 @@
 # email: U21ce3082@cit.ac.in
 # phone: 9706553977
 # avatar: shamim.jpeg
-# role: CHIEF CONVENOR
+# role: Alumini
 # type: convenor
 # roll: 202102013082
 # branch: CE
