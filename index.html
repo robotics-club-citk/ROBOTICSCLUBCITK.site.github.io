@@ -2,6 +2,13 @@
 layout: default
 ---
 
+<!-- Redirect to the new Robotics Club website -->
+<meta http-equiv="refresh" content="0; url=https://roboticsclub-citk.github.io/">
+
+<script>
+  window.location.replace("https://roboticsclub-citk.github.io/");
+</script>
+
 <!-- about -->
 <div class="section">
   <div class="container">
@@ -12,21 +19,30 @@ layout: default
             src="{{ site.baseurl }}/assets/img/icon/ROBOTICS CLUB LOGO.png">
         </figure>
       </div>
+
       <div class="column is-two-thirds">
         <h1 class="title">ROBOTICS CLUB CITK</h1>
         <p>
-        
-Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to building robots and crafting innovative electronics projects. Whether you're a tech pro or just starting out, we offer the tools, guidance, and community you need. Join us for hands-on workshops, seminars, and endless possibilities. Don't wait—dive into the world of robotics and create something extraordinary with us!
+          Ready to bring your ideas to life? The Robotics Club at CITK is your
+          gateway to building robots and crafting innovative electronics projects.
+          Whether you're a tech pro or just starting out, we offer the tools,
+          guidance, and community you need. Join us for hands-on workshops,
+          seminars, and endless possibilities. Don't wait—dive into the world of
+          robotics and create something extraordinary with us!
+        </p>
       </div>
     </div>
 
     <div class="has-text-centered">
-      <a href="https://roboticsclub-citk.github.io/" class="button is-primary">Register now</a>
+      <a href="https://roboticsclub-citk.github.io/" class="button is-primary">
+        Register now
+      </a>
     </div>
-
   </div>
 </div>
+
 <hr>
+
 <!-- Image Gallery Section -->
 <style>
   .gallery-title {
@@ -48,11 +64,10 @@ Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to 
   }
 
   .slider-wrapper {
-  overflow: hidden;
-  position: relative;
-  height: auto; /* Adjusts the height based on image height */
-}
-
+    overflow: hidden;
+    position: relative;
+    height: auto;
+  }
 
   .slider-images {
     display: flex;
@@ -66,12 +81,11 @@ Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to 
   }
 
   .slider-item img {
-  width: 100%;
-  height: 600px; /* Increased height */
-  object-fit: cover;
-  border-radius: 10px;
-}
-
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
 
   .caption {
     position: absolute;
@@ -80,11 +94,11 @@ Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to 
     color: white;
     padding: 8px 16px;
     border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
-    font-size: 1.5rem; /* Larger font for readability */
-    font-weight: bold; /* Bold text for emphasis */
-    letter-spacing: 0.5px; /* Slight letter spacing for better readability */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
   .caption-date {
@@ -144,42 +158,53 @@ Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to 
 </style>
 
 <h2 class="gallery-title">Image Gallery</h2>
+
 <div class="slider">
   <div class="slider-wrapper">
     <div class="slider-images">
-      
+
       <div class="slider-item">
-        <img src="{{ site.baseurl }}/assets/img/gallery/bodoland.jpg" alt="7th sep bodoland 1 day workshop">
+        <img src="{{ site.baseurl }}/assets/img/gallery/bodoland.jpg"
+          alt="7th sep bodoland 1 day workshop">
         <div class="caption">
           <div class="caption-date">7 Sept 2024</div>
           <div>Bodoland workshop</div>
         </div>
       </div>
+
       <div class="slider-item">
-        <img src="{{ site.baseurl }}/assets/img/gallery/orientation24.JPG" alt="ROBOTICS CLUB ORIENTATION PROGRAM 2024">
+        <img src="{{ site.baseurl }}/assets/img/gallery/orientation24.JPG"
+          alt="ROBOTICS CLUB ORIENTATION PROGRAM 2024">
         <div class="caption">
           <div class="caption-date">22 Aug 2024</div>
           <div>Orientation 2024</div>
         </div>
       </div>
+
       <div class="slider-item">
-        <img src="{{ site.baseurl }}/assets/img/gallery/orientation19-2.jpg" alt="ROBOTICS CLUB ORIENTATION PROGRAM 2019">
+        <img src="{{ site.baseurl }}/assets/img/gallery/orientation19-2.jpg"
+          alt="ROBOTICS CLUB ORIENTATION PROGRAM 2019">
         <div class="caption">
           <div class="caption-date">17 Oct 2019</div>
           <div>Orientation 2019</div>
         </div>
       </div>
+
       <div class="slider-item">
-        <img src="{{ site.baseurl }}/assets/img/gallery/inauguration.jpg" alt="ROBOTICS CLUB INAUGRATION">
+        <img src="{{ site.baseurl }}/assets/img/gallery/inauguration.jpg"
+          alt="ROBOTICS CLUB INAUGRATION">
         <div class="caption">
           <div class="caption-date">02 Aug 2016</div>
           <div>Inauguration 2016</div>
         </div>
       </div>
+
     </div>
   </div>
+
   <button class="slider-control prev">&lt;</button>
   <button class="slider-control next">&gt;</button>
+
   <div class="slider-indicators">
     <div class="indicator active" data-index="0"></div>
     <div class="indicator" data-index="1"></div>
@@ -189,73 +214,100 @@ Ready to bring your ideas to life? The Robotics Club at CITK is your gateway to 
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const sliderImages = document.querySelector('.slider-images');
-  const items = document.querySelectorAll('.slider-item');
-  const prevButton = document.querySelector('.slider-control.prev');
-  const nextButton = document.querySelector('.slider-control.next');
-  const indicators = document.querySelectorAll('.indicator');
-  let currentIndex = 0;
-  
-  // Clone the first and last items for seamless infinite scroll
-  const firstItem = items[0].cloneNode(true);
-  const lastItem = items[items.length - 1].cloneNode(true);
-  sliderImages.appendChild(firstItem);
-  sliderImages.insertBefore(lastItem, items[0]);
+  document.addEventListener('DOMContentLoaded', function () {
 
-  function showSlide(index) {
-    
-    const totalItems = items.length + 2;
-    if (index >= totalItems) {
-      currentIndex = 1; 
-      sliderImages.style.transition = 'none';
-      sliderImages.style.transform = `translateX(${-100}%)`;
-      setTimeout(() => {
-        sliderImages.style.transition = 'transform 0.5s ease';
-      }, 20);
-    } else if (index < 0) {
-      currentIndex = totalItems - 2; 
-      sliderImages.style.transition = 'none'; 
-      sliderImages.style.transform = `translateX(${-100 * (currentIndex + 1)}%)`;
-      setTimeout(() => {
-        sliderImages.style.transition = 'transform 0.5s ease';
-      }, 20);
-    } else {
-      currentIndex = index;
+    const sliderImages = document.querySelector('.slider-images');
+    const items = document.querySelectorAll('.slider-item');
+    const prevButton = document.querySelector('.slider-control.prev');
+    const nextButton = document.querySelector('.slider-control.next');
+    const indicators = document.querySelectorAll('.indicator');
+
+    let currentIndex = 0;
+
+    // Clone the first and last items for seamless infinite scroll
+    const firstItem = items[0].cloneNode(true);
+    const lastItem = items[items.length - 1].cloneNode(true);
+
+    sliderImages.appendChild(firstItem);
+    sliderImages.insertBefore(lastItem, items[0]);
+
+    function showSlide(index) {
+
+      const totalItems = items.length + 2;
+
+      if (index >= totalItems) {
+
+        currentIndex = 1;
+
+        sliderImages.style.transition = 'none';
+        sliderImages.style.transform = `translateX(${-100}%)`;
+
+        setTimeout(() => {
+          sliderImages.style.transition = 'transform 0.5s ease';
+        }, 20);
+
+      } else if (index < 0) {
+
+        currentIndex = totalItems - 2;
+
+        sliderImages.style.transition = 'none';
+        sliderImages.style.transform =
+          `translateX(${-100 * (currentIndex + 1)}%)`;
+
+        setTimeout(() => {
+          sliderImages.style.transition = 'transform 0.5s ease';
+        }, 20);
+
+      } else {
+        currentIndex = index;
+      }
+
+      const offset = -currentIndex * 100;
+
+      sliderImages.style.transform = `translateX(${offset}%)`;
+
+      updateIndicators();
     }
-    
-    const offset = -currentIndex * 100;
-    sliderImages.style.transform = `translateX(${offset}%)`;
-    updateIndicators();
-  }
 
-  function updateIndicators() {
-    indicators.forEach((indicator, index) => {
-      indicator.classList.toggle('active', index === (currentIndex - 1));
+    function updateIndicators() {
+
+      indicators.forEach((indicator, index) => {
+
+        indicator.classList.toggle(
+          'active',
+          index === (currentIndex - 1)
+        );
+
+      });
+    }
+
+    function nextSlide() {
+      showSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentIndex - 1);
+    }
+
+    indicators.forEach(indicator => {
+
+      indicator.addEventListener('click', () => {
+
+        showSlide(
+          parseInt(indicator.getAttribute('data-index')) + 1
+        );
+
+      });
+
     });
-  }
 
-  function nextSlide() {
-    showSlide(currentIndex + 1);
-  }
+    nextButton.addEventListener('click', nextSlide);
+    prevButton.addEventListener('click', prevSlide);
 
-  function prevSlide() {
-    showSlide(currentIndex - 1);
-  }
+    // Auto-slide every 5 seconds
+    setInterval(nextSlide, 5000);
 
-  indicators.forEach(indicator => {
-    indicator.addEventListener('click', () => {
-      showSlide(parseInt(indicator.getAttribute('data-index')) + 1);
-    });
   });
-
-  nextButton.addEventListener('click', nextSlide);
-  prevButton.addEventListener('click', prevSlide);
-
-  // Auto-slide every 5 seconds
-  setInterval(nextSlide, 5000);
-});
-
 </script>
 
 <hr>
@@ -263,117 +315,139 @@ document.addEventListener('DOMContentLoaded', function () {
 <!-- Faculty and Convenors -->
 <div class="section">
   <div class="container">
+
     <h1 class="title has-text-centered">Our Team</h1>
 
     <!-- Faculty Section -->
     <div class="section">
+
       <h2 class="title is-4 has-text-centered">MENTORS</h2>
+
       <div class="columns is-centered">
+
         <div class="column is-one-third has-text-centered">
           <figure class="image is-128x128 is-inline-block">
-            <img style="width: 128px; height: 128px; object-fit: cover; border-radius: 50%;" src="{{ site.baseurl }}/images/pps.jpg" alt="Dr. Pankaj Pratap Singh">
+            <img
+              style="width: 128px; height: 128px; object-fit: cover; border-radius: 50%;"
+              src="{{ site.baseurl }}/images/pps.jpg"
+              alt="Dr. Pankaj Pratap Singh">
           </figure>
+
           <p>Dr. Pankaj Pratap Singh</p>
         </div>
+
         <div class="column is-one-third has-text-centered">
           <figure class="image is-128x128 is-inline-block">
-            <img style="width: 128px; height: 128px; object-fit: cover; border-radius: 50%;" src="{{ site.baseurl }}/images/ganesh.jpg" alt="Dr. Ganesh Roy">
+            <img
+              style="width: 128px; height: 128px; object-fit: cover; border-radius: 50%;"
+              src="{{ site.baseurl }}/images/ganesh.jpg"
+              alt="Dr. Ganesh Roy">
           </figure>
+
           <p>Dr. Ganesh Roy</p>
         </div>
+
         <div class="column is-one-third has-text-centered">
           <figure class="image is-128x128 is-inline-block">
-            <img style="width: 128px; height: 128px; object-fit: cover; border-radius: 50%;" src="{{ site.baseurl }}/images/jeet.jpg" alt="Jeet Dutta">
+            <img
+              style="width: 128px; height: 128px; object-fit: cover; border-radius: 50%;"
+              src="{{ site.baseurl }}/images/jeet.jpg"
+              alt="Jeet Dutta">
           </figure>
+
           <p>Mr. Jeet Dutta</p>
         </div>
+
       </div>
     </div>
 
-    <!-- Divider Line -->
     <hr style="border: none; height: 2px; background-color: #ddd; margin: 2rem 0;">
 
-<!-- Chief Convenor Section -->
-<div class="section">
-  <h2 class="title is-4 has-text-centered">CHIEF-CONVENOR</h2>
-  <div class="columns is-centered">
-    <div class="column is-half has-text-centered">
-      <figure class="image is-128x128 is-inline-block team-photo-container">
-          <img style="width: 128px; height: 128px; object-fit: cover; border-radius: 50%;" src="{{ site.baseurl }}/images/Peter.jpg" alt="Shamim Shahinur Rahman" class="team-photo">
-        <div class="popup">
-          <h3>Peter Basumatary</h3>
-          <p>Know more about me.</p>
-          <div class="social-icons">
-            <a href="https://www.instagram.com/40_creeper/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/peterbasumatary/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.facebook.com/creeper40/" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://roboticsclub.cit.ac.in/megazine/" target="_blank"><i class="fa fa-link"></i></a>
-          </div>
+    <!-- Chief Convenor Section -->
+    <div class="section">
+
+      <h2 class="title is-4 has-text-centered">CHIEF-CONVENOR</h2>
+
+      <div class="columns is-centered">
+
+        <div class="column is-half has-text-centered">
+
+          <figure class="image is-128x128 is-inline-block team-photo-container">
+
+            <img
+              style="width: 128px; height: 128px; object-fit: cover; border-radius: 50%;"
+              src="{{ site.baseurl }}/images/Peter.jpg"
+              alt="Shamim Shahinur Rahman"
+              class="team-photo">
+
+            <div class="popup">
+
+              <h3>Peter Basumatary</h3>
+
+              <p>Know more about me.</p>
+
+              <div class="social-icons">
+
+                <a href="https://www.instagram.com/40_creeper/" target="_blank">
+                  <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/peterbasumatary/" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+
+                <a href="https://www.facebook.com/creeper40/" target="_blank">
+                  <i class="fab fa-facebook"></i>
+                </a>
+
+                <a href="https://roboticsclub.cit.ac.in/megazine/" target="_blank">
+                  <i class="fa fa-link"></i>
+                </a>
+
+              </div>
+            </div>
+
+          </figure>
+
+          <p>Peter Basumatary</p>
+
         </div>
-      </figure>
-      <p>Peter Basumatary</p>
+
+      </div>
+
     </div>
-  </div>
-</div>
 
-
-    <!-- Divider Line -->
     <hr style="border: none; height: 2px; background-color: #ddd; margin: 2rem 0;">
 
     <!-- Convenors Section -->
-  <!-- Convenors Section -->
-<div class="section">
-  <h2 class="title is-4 has-text-centered">CONVENORS</h2>
-  <div class="columns is-centered">
-    <!-- <div class="column is-one-third has-text-centered">
-      <figure class="image is-128x128 is-inline-block team-photo-container">
-        <img style="width: 128px; height: 128px; object-fit: cover; border-radius: 50%;" src="{{ site.baseurl }}/images/Ritusha.jpg" alt="Ritusha Bora" class="team-photo">
-        <div class="popup">
-          <h3>Ritusha Bora</h3>
-          <p>Know more about me..</p>
-          <div class="social-icons">
-            <a href="https://www.facebook.com/profile.php?id=100092407097980" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.linkedin.com/in/ritusha-bora-594b63253/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/tyndall_in_life/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://roboticsclub.cit.ac.in/megazine/" target="_blank"><i class="fa fa-link"></i></a>
-          </div>
-        </div>
-      </figure>
-      <p>Ritusha Bora</p>
-    </div> -->
-    <!-- <div class="column is-one-third has-text-centered">
-      <figure class="image is-128x128 is-inline-block team-photo-container">
-        <img style="width: 128px; height: 128px; object-fit: cover; border-radius: 50%;" src="{{ site.baseurl }}/images/Peter.jpg" alt="Peter Basumatary" class="team-photo">
-        <div class="popup">
-          <h3>Peter Basumatary</h3>
-          <p>Know more about me.</p>
-          <div class="social-icons">
-            <a href="https://www.instagram.com/40_creeper/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/peterbasumatary/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.facebook.com/creeper40/" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://roboticsclub.cit.ac.in/megazine/" target="_blank"><i class="fa fa-link"></i></a>
-          </div>
-        </div>
-      </figure>
-      <p>Peter Basumatary</p>
-    </div> -->
+    <div class="section">
+
+      <h2 class="title is-4 has-text-centered">CONVENORS</h2>
+
+      <div class="columns is-centered">
+      </div>
+
+    </div>
+
   </div>
 </div>
+
 <style>
+
   .team-photo-container {
     position: relative;
     display: inline-block;
-}
+  }
 
-.team-photo {
+  .team-photo {
     transition: transform 0.3s ease;
-}
+  }
 
-.team-photo:hover {
+  .team-photo:hover {
     transform: scale(1.05);
-}
+  }
 
-.popup {
+  .popup {
     position: absolute;
     top: 100%;
     left: 50%;
@@ -386,164 +460,307 @@ document.addEventListener('DOMContentLoaded', function () {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     display: none;
     z-index: 1;
-}
+  }
 
-.team-photo-container:hover .popup {
+  .team-photo-container:hover .popup {
     display: block;
-}
+  }
 
-.popup h3 {
+  .popup h3 {
     margin: 0;
     font-size: 18px;
-}
+  }
 
-.popup p {
+  .popup p {
     margin: 5px 0 10px;
     font-size: 14px;
-}
+  }
 
-.social-icons {
+  .social-icons {
     display: flex;
     justify-content: space-around;
-}
+  }
 
-.social-icons a {
+  .social-icons a {
     color: #555;
     font-size: 20px;
     transition: color 0.3s;
-}
+  }
 
-.social-icons a:hover {
+  .social-icons a:hover {
     color: #007bff;
-}
+  }
 
-</style>   
+</style>
+
 <hr>
 
 <!-- latest events -->
 <div class="section">
+
   <div class="container">
+
     <h1 class="title">Latest Events</h1>
+
     <div class="columns is-centered">
+
       <div class="column is-two-thirds">
+
         <div class="timeline">
+
           {% assign sorted-events = site.events | sort:'start-date' | reverse %}
+
           {% for event in sorted-events limit:3 %}
+
           <div class="timeline-item is-block">
+
             <div class="timeline-marker"></div>
+
             <div class="timeline-content">
+
               <p class="heading event-date">
                 <span>{{ event.start-date | date: '%b %d, %Y' }}</span>
               </p>
 
-              <a class="box" href="{{ event.url }}"
+              <a class="box"
+                href="{{ event.url }}"
                 style="background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);">
-                <p class="has-text-weight-semibold">{{ event.title }}</p>
+
+                <p class="has-text-weight-semibold">
+                  {{ event.title }}
+                </p>
+
                 <p>{{ event.place }}</p>
+
                 <p>{{ event.start-date | date: ' %I:%M %p' }}</p>
+
               </a>
 
             </div>
+
           </div>
+
           {% endfor %}
+
         </div>
+
       </div>
+
     </div>
+
     <div class="has-text-centered">
-      <a class="button is-small is-rounded is-primary" href="{{site.baseurl}}/events/">
+
+      <a
+        class="button is-small is-rounded is-primary"
+        href="{{site.baseurl}}/events/">
+
         <span>View all events</span>
+
       </a>
+
     </div>
+
   </div>
+
 </div>
 
 <hr>
 
 <!-- featured projects -->
 <div class="section">
+
   <div class="container">
+
     <h1 class="title">Featured Projects</h1>
+
     <div class="columns is-multiline">
+
       {% for project in site.projects %}
-      {% if project.title == 'Robotic Arm' or project.title == 'Satellite image reception' or project.title == 'Room Automation' or project.title == 'Four sense Robotic car' %}
+
+      {% if project.title == 'Robotic Arm'
+        or project.title == 'Satellite image reception'
+        or project.title == 'Room Automation'
+        or project.title == 'Four sense Robotic car' %}
+
       <div class="column is-half-tablet is-half-desktop">
-        <a href="{{ project.url }}" class="box r-border"
+
+        <a
+          href="{{ project.url }}"
+          class="box r-border"
           style="background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);">
+
           <p class="has-text-weight-semibold is-capitalized">
             {{ project.title }}
           </p>
+
           <p class="is-size-7">
+
             {% if project.status == 'completed' %}
-            <span class="icon has-text-success"><i class="fa fa-check-circle"></i></span>
+
+            <span class="icon has-text-success">
+              <i class="fa fa-check-circle"></i>
+            </span>
+
             {% else %}
-            <span class="icon has-text-link"><i class="fa fa-sync-alt"></i></span>
+
+            <span class="icon has-text-link">
+              <i class="fa fa-sync-alt"></i>
+            </span>
+
             {% endif %}
-            <span class="is-capitalized">{{ project.status }}</span>
+
+            <span class="is-capitalized">
+              {{ project.status }}
+            </span>
 
             {% if project.youtube-video %}
-            <span class="icon has-text-danger"><i class="fab fa-youtube"></i></span>
+
+            <span class="icon has-text-danger">
+              <i class="fab fa-youtube"></i>
+            </span>
+
             <span>Video available</span>
+
             {% endif %}
+
             {% if project.images %}
-            <span class="icon has-text-link"><i class="fas fa-images"></i></span>
+
+            <span class="icon has-text-link">
+              <i class="fas fa-images"></i>
+            </span>
+
             <span>Images available</span>
+
             {% endif %}
+
           </p>
+
           <br>
+
           <!-- member avatars -->
           <div class="columns is-mobile is-centered is-variable is-1">
+
             {% for member-username in project.member-usernames %}
-            <!-- to display a number if members > 4 -->
+
             {% if forloop.index >= 4 and forloop.length > 4 %}
+
             {% if forloop.last %}
+
             <div class="column is-narrow">
-              <span class="r-circle is-primary">+{{ forloop.length | minus: 3 }}</span>
-            </div>
-            {% break %}
-            {% else %}
-            {% continue %}
-            {% endif %}
-            {% endif %}
-            <!-- if project done by robotics club -->
-            {% if member-username == 'club' %}
-            <div class="column is-narrow">
-              <span class="tag is-rounded is-medium">
-                <span class="icon"><i class="fa fa-users"></i></span>
-                <span class="is-size-7 has-text-weight-semibold">Robotics Club Team</span>
+
+              <span class="r-circle is-primary">
+                +{{ forloop.length | minus: 3 }}
               </span>
+
             </div>
+
+            {% break %}
+
             {% else %}
-            {% assign member = site.members | where:'username',member-username | first %}
-            {% if member != null %}
+
+            {% continue %}
+
+            {% endif %}
+
+            {% endif %}
+
+            <!-- if project done by robotics club -->
+
+            {% if member-username == 'club' %}
+
             <div class="column is-narrow">
-              <figure class="image is-32x32">
-                <img alt="Image of {{ member.name }}" class="is-rounded"
-                  src="{{ site.baseurl }}/assets/img/avatars/members/{{ member.avatar }}" title="{{ member.name }}">
-              </figure>
+
+              <span class="tag is-rounded is-medium">
+
+                <span class="icon">
+                  <i class="fa fa-users"></i>
+                </span>
+
+                <span class="is-size-7 has-text-weight-semibold">
+                  Robotics Club Team
+                </span>
+
+              </span>
+
             </div>
+
+            {% else %}
+
+            {% assign member = site.members
+              | where:'username',member-username
+              | first %}
+
+            {% if member != null %}
+
+            <div class="column is-narrow">
+
+              <figure class="image is-32x32">
+
+                <img
+                  alt="Image of {{ member.name }}"
+                  class="is-rounded"
+                  src="{{ site.baseurl }}/assets/img/avatars/members/{{ member.avatar }}"
+                  title="{{ member.name }}">
+
+              </figure>
+
+            </div>
+
             {% endif %}
+
             {% endif %}
+
             {% endfor %}
+
           </div>
+
         </a>
+
       </div>
+
       {% endif %}
+
       {% endfor %}
+
     </div>
+
     <div class="has-text-centered">
-      <a class="button is-small is-rounded is-primary" href="{{site.baseurl}}/projects/">
+
+      <a
+        class="button is-small is-rounded is-primary"
+        href="{{site.baseurl}}/projects/">
+
         <span>View all projects</span>
+
       </a>
+
     </div>
+
   </div>
+
 </div>
 
-<!-- for highlighting upcoming event-->
+<!-- for highlighting upcoming event -->
 <script src="{{ site.baseurl }}/assets/js/date-utility.js"></script>
+
 <script>
+
   document.querySelectorAll('.event-date').forEach(function (node) {
-    var eventDate = dates.convert(node.firstElementChild.innerHTML);
+
+    var eventDate = dates.convert(
+      node.firstElementChild.innerHTML
+    );
+
     if (dates.compare(eventDate, new Date()) >= 0)
-      node.insertAdjacentHTML('beforeend', '<span class="icon has-text-danger"><i class="fa fa-certificate"></i></span><span class="has-text-danger">Upcoming</span>');
+
+      node.insertAdjacentHTML(
+        'beforeend',
+        '<span class="icon has-text-danger">' +
+        '<i class="fa fa-certificate"></i>' +
+        '</span>' +
+        '<span class="has-text-danger">Upcoming</span>'
+      );
+
   });
+
 </script>
